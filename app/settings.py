@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'loans.apps.LoansConfig',
     'banks.apps.BanksConfig',
     'documents.apps.DocumentsConfig',
-    'import_export'
+    'import_export',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,3 +143,5 @@ AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_REGION_NAME = config('AWS_S3_REGION_NAME')
 
 IMPORT_EXPORT_USE_TRANSACTIONS = True
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
